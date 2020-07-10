@@ -7,7 +7,7 @@ import List from './List.js';
 
 
 function Bio(props){
-  return <p>umur {props.age} - Hanya seorang mahasiswa</p>;
+  return <p>umur {props.age} - Select your character!</p>;
 }
 function Greeting(input) {
   return <container>
@@ -181,8 +181,8 @@ function Home() {
             <Timer start="0" judul="Timer : "/>
             <Timer start="5"/>
             <Toggle/>   
-            <Greeting name="Helmi Effendi" age="20"/>
-            <Greeting name="Effendi" age="25"/>
+            <Greeting name="Effendi" age="-"/>
+            <Greeting name="Helmi Effendi" age="10"/>
          </div>
 }
 
@@ -230,11 +230,12 @@ class App extends Component{
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <nav>
-              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/react-deploy'>Home</Link></li>
               <li><Link to='/users'>User</Link></li>
             </nav>
           <main>
             <Switch>
+              <Route path="/react-deploy" exact component={Home}></Route>
               <Route path="/" exact component={Home}></Route>
               <Route path="/users" exact component={ListView}></Route>
               <Route path="/users/:name" exact component={DetailView}></Route>
